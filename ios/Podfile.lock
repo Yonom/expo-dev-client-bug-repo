@@ -20,6 +20,38 @@ PODS:
     - UMCore
   - EXKeepAwake (9.2.0):
     - UMCore
+  - expo-dev-client (0.4.3):
+    - expo-dev-launcher
+    - expo-dev-menu
+    - expo-dev-menu-interface
+    - EXUpdatesInterface
+  - expo-dev-launcher (0.6.3):
+    - expo-dev-launcher/Main (= 0.6.3)
+    - expo-dev-menu-interface
+    - EXUpdatesInterface
+    - React
+  - expo-dev-launcher/Main (0.6.3):
+    - expo-dev-launcher/Unsafe
+    - expo-dev-menu-interface
+    - EXUpdatesInterface
+    - React
+  - expo-dev-launcher/Unsafe (0.6.3):
+    - expo-dev-menu-interface
+    - EXUpdatesInterface
+    - React
+  - expo-dev-menu (0.7.4):
+    - expo-dev-menu-interface
+    - expo-dev-menu/Main (= 0.7.4)
+    - React
+  - expo-dev-menu-interface (0.3.2):
+    - React
+  - expo-dev-menu/Main (0.7.4):
+    - expo-dev-menu-interface
+    - expo-dev-menu/Vendored
+    - React
+  - expo-dev-menu/Vendored (0.7.4):
+    - expo-dev-menu-interface
+    - React
   - ExpoModulesCore (0.2.0):
     - ExpoModulesCore/Core (= 0.2.0)
     - ExpoModulesCore/Interfaces (= 0.2.0)
@@ -359,6 +391,10 @@ DEPENDENCIES:
   - EXFont (from `../node_modules/expo-font/ios`)
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
   - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - expo-dev-client (from `../node_modules/expo-dev-client`)
+  - expo-dev-launcher (from `../node_modules/expo-dev-launcher`)
+  - expo-dev-menu (from `../node_modules/expo-dev-menu`)
+  - expo-dev-menu-interface (from `../node_modules/expo-dev-menu-interface`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core/ios`)
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - EXStructuredHeaders (from `../node_modules/expo-structured-headers/ios`)
@@ -422,6 +458,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-image-loader/ios"
   EXKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
+  expo-dev-client:
+    :path: "../node_modules/expo-dev-client"
+  expo-dev-launcher:
+    :path: "../node_modules/expo-dev-launcher"
+  expo-dev-menu:
+    :path: "../node_modules/expo-dev-menu"
+  expo-dev-menu-interface:
+    :path: "../node_modules/expo-dev-menu-interface"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core/ios"
   EXSplashScreen:
@@ -511,6 +555,10 @@ SPEC CHECKSUMS:
   EXFont: 9846ba1bb6f5f5aed44e20eea3ac70693323832d
   EXImageLoader: d3531a3fe530b22925c19977cb53bb43e3821fe6
   EXKeepAwake: f4105ef469be7b283f66ce2d7234bb71ac80cd26
+  expo-dev-client: 795bfabcc9225d3024b687390e9612ceafde6536
+  expo-dev-launcher: b6ce623d94712d6e4706294eb1b3853932ebc520
+  expo-dev-menu: 83ef3dcf8d35a07c6d8a4873e0d464dad72b03d9
+  expo-dev-menu-interface: 848563c91c9f36f963a8456e885129a46f4cdfa1
   ExpoModulesCore: 2734852616127a6c1fc23012197890a6f3763dc7
   EXSplashScreen: 6208ca88470ff5979fd49a08ef3feb01143a2b79
   EXStructuredHeaders: e52b880264d15b8ad07d36670226c29476af6334
@@ -551,6 +599,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 2be431101b73604e64fbfffcf759336f9d8fccbb
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
-PODFILE CHECKSUM: e1a57c539af9e7e1fd4547dd05b5b2d1c239a45a
+PODFILE CHECKSUM: 680ed92a47d1f09866d89c8dfafbe5b1148c5640
 
 COCOAPODS: 1.10.1
