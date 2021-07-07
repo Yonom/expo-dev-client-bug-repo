@@ -1,16 +1,18 @@
 package com.expodevclienttest;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
+import expo.modules.devlauncher.DevLauncherController;
+import expo.modules.devmenu.react.DevMenuAwareReactActivity;
 import expo.modules.splashscreen.singletons.SplashScreen;
 import expo.modules.splashscreen.SplashScreenImageResizeMode;
 
-public class MainActivity extends ReactActivity {
+public class MainActivity extends DevMenuAwareReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // Set the theme to AppTheme BEFORE onCreate to support 
@@ -35,11 +37,21 @@ public class MainActivity extends ReactActivity {
 
     @Override
     protected ReactActivityDelegate createReactActivityDelegate() {
-        return new ReactActivityDelegate(this, getMainComponentName()) {
+        ReactActivityDelegate delegate = new ReactActivityDelegate(this, getMainComponentName()) {
             @Override
             protected ReactRootView createRootView() {
                 return new RNGestureHandlerEnabledRootView(MainActivity.this);
             }
         };
+ 
+        return DevLauncherController.wrapReactActivityDelegate(this,()-> delegate);
+    }
+ 
+    @Override
+    public void onNewIntent(Intent intent) {
+        if (DevLauncherController.tryToHandleIntent(this, intent)) {
+           return;
+        }
+        super.onNewIntent(intent);
     }
 }
